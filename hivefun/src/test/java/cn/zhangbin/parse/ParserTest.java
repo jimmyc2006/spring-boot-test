@@ -22,7 +22,7 @@ import cn.zhangbin.bean.SQLResult;
  */
 public class ParserTest {
   private static final String sqlFile =
-      "/Users/apple/eclipse-workspace/spring-boot-test/springboot-hive/src/main/java/select.sql";
+      "/Users/apple/eclipse-workspace/spring-boot-test/springboot-hive/select.sql";
   private static List<String> sqls;
 
   @BeforeClass
