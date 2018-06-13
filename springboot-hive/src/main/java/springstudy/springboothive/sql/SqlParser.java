@@ -33,6 +33,7 @@ public class SqlParser {
   }
 
   public static void main(String[] args) throws ParseException {
+    org.apache.hadoop.hive.ql.parse.ParseDriver ll;
     test1();
   }
 }

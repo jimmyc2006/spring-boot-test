@@ -276,6 +276,9 @@ public class HiveParse {
 
   public void parse(ASTNode ast) {
     parseIteral(ast);
+    
+  }
+  public void printInfo() {
     System.out.println("***************表***************");
     for (String table : tables) {
       System.out.println(table);
@@ -324,20 +327,18 @@ public class HiveParse {
     String sql22 =
         "select login.uid from login day_login left outer join (select uid from regusers where dt='20130101') day_regusers on day_login.uid=day_regusers.uid where day_login.dt='20130101' and day_regusers.uid is null";
     String sql23 = "select bb from (select zpc.aa, def.bb from dbx.zpc left outer join dby.def) d";
-    String parsesql = sql23;
+    String parsesql = sql22;
     HiveParse hp = new HiveParse();
     System.out.println(parsesql);
     ASTNode ast = pd.parse(parsesql);
     System.out.println(ast.toStringTree());
     hp.parse(ast);
-    // LineageInfo
+    test(parsesql);
   }
   
   public static void test(String query) throws SemanticException, ParseException {
     LineageInfo lep = new LineageInfo();
-
     lep.getLineageInfo(query);
-
     for (String tab : lep.getInputTableList()) {
       System.out.println("InputTable=" + tab);
     }
@@ -345,5 +346,29 @@ public class HiveParse {
     for (String tab : lep.getOutputTableList()) {
       System.out.println("OutputTable=" + tab);
     }
+  }
+
+  public Map<String, String> getAlias() {
+    return alias;
+  }
+
+  public void setAlias(Map<String, String> alias) {
+    this.alias = alias;
+  }
+
+  public Map<String, String> getCols() {
+    return cols;
+  }
+
+  public void setCols(Map<String, String> cols) {
+    this.cols = cols;
+  }
+
+  public Set<String> getTables() {
+    return tables;
+  }
+
+  public void setTables(Set<String> tables) {
+    this.tables = tables;
   }
 }
