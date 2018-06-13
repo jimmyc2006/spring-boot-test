@@ -17,11 +17,11 @@ public class TextFormatUtil {
     char[] content = txt.toCharArray();
     for (int i = 0; i < content.length; i++) {
       if (content[i] == startSign) {
-        sb.append("\n" + prefixStr(floor));
+        sb.append("\n" + prefixStr(floor) + startSign);
         floor++;
       } else if (content[i] == endSign) {
-        sb.append("\n" + prefixStr(floor) + endSign);
         floor--;
+        sb.append("\n" + prefixStr(floor) + endSign);
       } else {
         sb.append(content[i]);
       }

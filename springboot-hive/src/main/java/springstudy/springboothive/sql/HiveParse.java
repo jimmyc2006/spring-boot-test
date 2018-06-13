@@ -328,7 +328,7 @@ public class HiveParse {
     HiveParse hp = new HiveParse();
     System.out.println(parsesql);
     ASTNode ast = pd.parse(parsesql);
-    System.out.println(ast.toStringTree());
+    // System.out.println(ast.toStringTree());
     hp.parse(ast);
     // LineageInfo
   }
