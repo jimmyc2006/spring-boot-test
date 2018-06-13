@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class TextFormatUtil {
 
-  private static final String prefix = "  ";
+  private static final String prefix = "    ";
 
   public static String format(String txt, char startSign, char endSign) {
     StringBuilder sb = new StringBuilder();
@@ -39,7 +39,7 @@ public class TextFormatUtil {
 
   public static void main(String[] args) {
     String str =
-        "(tok_query (tok_from (tok_subquery (tok_query (tok_from (tok_leftouterjoin (tok_tabref (tok_tabname dbx zpc)) (tok_tabref (tok_tabname dby def)))) (tok_insert (tok_destination (tok_dir tok_tmp_file)) (tok_select (tok_selexpr (. (tok_table_or_col zpc) aa)) (tok_selexpr (. (tok_table_or_col def) bb))))) d)) (tok_insert (tok_destination (tok_dir tok_tmp_file)) (tok_select (tok_selexpr (tok_table_or_col name))))) <eof>";
+        "(tok_query (tok_from (tok_subquery (tok_query (tok_from (tok_leftouterjoin (tok_tabref (tok_tabname dbx zpc)) (tok_tabref (tok_tabname dby def)))) (tok_insert (tok_destination (tok_dir tok_tmp_file)) (tok_select (tok_selexpr (. (tok_table_or_col zpc) aa)) (tok_selexpr (. (tok_table_or_col def) bb))))) d)) (tok_insert (tok_destination (tok_dir tok_tmp_file)) (tok_select (tok_selexpr (tok_table_or_col bb))))) <eof>";
     System.out.println(format(str, '(', ')'));
   }
 }

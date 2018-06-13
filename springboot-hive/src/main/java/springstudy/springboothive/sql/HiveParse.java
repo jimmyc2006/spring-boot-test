@@ -18,7 +18,8 @@ import org.apache.hadoop.hive.ql.tools.LineageInfo;
 
 /**
  * 目的：获取AST中的表，列，以及对其所做的操作，如SELECT,INSERT 重点：获取SELECT操作中的表和列的相关操作。其他操作这判断到表级别。
- * 实现思路：对AST深度优先遍历，遇到操作的token则判断当前的操作， 遇到TOK_TAB或TOK_TABREF则判断出当前操作的表，遇到子句则压栈当前处理，处理子句。 子句处理完，栈弹出。
+ * 实现思路：对AST深度优先遍历，遇到操作的token则判断当前的操作， 遇到TOK_TAB或TOK_TABREF则判断出当前操作的表，遇到子句则压栈当前处理，处理子句。
+ *  子句处理完，栈弹出。
  *
  */
 public class HiveParse {
@@ -68,7 +69,6 @@ public class HiveParse {
   }
 
   private Set<String> parseCurrentNode(ASTNode ast, Set<String> set) {
-    System.out.println(ast.getToken());
     if (ast.getToken() != null) {
       switch (ast.getToken().getType()) {
         case HiveParser.TOK_TABLE_PARTITION:
@@ -323,12 +323,12 @@ public class HiveParse {
     String sql21 = "alter table mp add partition (b='1', c='1')";
     String sql22 =
         "select login.uid from login day_login left outer join (select uid from regusers where dt='20130101') day_regusers on day_login.uid=day_regusers.uid where day_login.dt='20130101' and day_regusers.uid is null";
-    String sql23 = "select name from (select zpc.aa, def.bb from dbx.zpc left outer join dby.def) d";
+    String sql23 = "select bb from (select zpc.aa, def.bb from dbx.zpc left outer join dby.def) d";
     String parsesql = sql23;
     HiveParse hp = new HiveParse();
     System.out.println(parsesql);
     ASTNode ast = pd.parse(parsesql);
-    // System.out.println(ast.toStringTree());
+    System.out.println(ast.toStringTree());
     hp.parse(ast);
     // LineageInfo
   }
