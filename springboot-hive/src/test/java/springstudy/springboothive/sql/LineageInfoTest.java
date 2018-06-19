@@ -126,6 +126,11 @@ public class LineageInfoTest {
     Assert.assertTrue(tables.contains("dbx.zpc"));
     Assert.assertTrue(tables.contains("dby.def"));
   }
+  
+  protected void check_17(TreeSet<String> tables) {
+    Assert.assertTrue(tables.contains("dbx.zpc"));
+    Assert.assertTrue(tables.contains("dby.def"));
+  }
 
   public static TreeSet<String> test(String query) throws SemanticException, ParseException {
     LineageInfo lep = new LineageInfo();

@@ -32,8 +32,8 @@ public class HiveJdbcCli {
     long startTime = System.currentTimeMillis();
     try {
       Class.forName(driverName);
-      conn = DriverManager.getConnection("jdbc:hive2://192.168.40.28:10000/crm",
-          "zhangjiaqi", "");
+      conn = DriverManager.getConnection("jdbc:hive2://ip:10000/crm",
+          "username", "");
       // conn = getConn();
       stmt = conn.createStatement();
       ResultSet rs = stmt.executeQuery(sql);

@@ -202,11 +202,7 @@ public class ParserTest {
   }
   
   protected void check_16(Set<String> tables, Set<String> columns) {
-    String t1 = "dbx.zpc";
-    String t2 = "dby.def";
-    Assert.assertTrue(tables.contains(t1));
-    Assert.assertTrue(tables.contains(t2));
-    // 两个表关联以后查询某个列
-    Assert.assertTrue(columns.contains(t2 +".bb"));
+    Assert.assertTrue(tables.contains("dbx.zpc"));
+    Assert.assertTrue(tables.contains("dby.def"));
   }
 }

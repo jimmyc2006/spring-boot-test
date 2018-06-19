@@ -14,4 +14,5 @@ select * from tablename where unix_timestamp(cz_time) > unix_timestamp('2050-12-
 select statis_date,time_interval,gds_cd,gds_nm,sale_cnt,discount_amt,discount_rate,price,etl_time,pay_amt from o2ostore.tdm_gds_monitor_rt where time_interval = from_unixtime(unix_timestamp(concat(regexp_replace(from_unixtime(unix_timestamp('201506181700', 'yyyyMMddHHmm')+ 84600 ,  'yyyy-MM-dd HH:mm'),'-| |:',''),'00'),'yyyyMMddHHmmss'),'yyyy-MM-dd HH:mm:ss')
 SELECT a.* FROM a JOIN b ON (a.id = b.id AND a.department = b.department)
 select day_login.uid from login day_login left outer join (select uid from regusers where dt='20130101') day_regusers on day_login.uid=day_regusers.uid where day_login.dt='20130101' and day_regusers.uid is null
-select bb from (select zpc.aa, def.bb from dbx.zpc left outer join dby.def) d
+select bb from (select zpc.aa, def.bb from dbx.zpc left outer join dby.def) d limit 3
+SELECT `etl_tx_dt` FROM `sda`.`sda10_app_log` WHERE (`etl_tx_dt`=20180614) OR (`etl_tx_dt`=20180613) OR (`etl_tx_dt`=20180612) OR (`etl_tx_dt`=20180611) OR (`etl_tx_dt`=20180610) OR (`etl_tx_dt`=20180609) OR (`etl_tx_dt`=20180608) OR (`etl_tx_dt`=20180607) OR (`etl_tx_dt`=20180606) OR (`etl_tx_dt`=20180605) LIMIT 102
