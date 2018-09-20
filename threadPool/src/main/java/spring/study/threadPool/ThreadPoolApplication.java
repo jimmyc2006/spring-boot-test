@@ -1,4 +1,4 @@
-package spring.study.threadPool;
+  package spring.study.threadPool;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
