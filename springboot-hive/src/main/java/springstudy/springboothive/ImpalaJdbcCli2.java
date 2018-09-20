@@ -30,8 +30,8 @@ public class ImpalaJdbcCli2 {
   public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
 
     String driver = "org.apache.hive.jdbc.HiveDriver";
-    String url = "jdbc:hive2://192.168.40.28:10000/crm";
-    String user = "hive";
+    String url = "";
+    String user = "";
     Class.forName(driver);
     Connection conn = null;
     Statement s = null;

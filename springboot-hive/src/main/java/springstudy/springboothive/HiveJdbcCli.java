@@ -21,8 +21,8 @@ public class HiveJdbcCli {
     long startTime = System.currentTimeMillis();
     try {
       Class.forName(driverName);
-      conn = DriverManager.getConnection("jdbc:hive2://test-004.qianjin.com:10000/crm",
-          "admin", "123456");
+      conn = DriverManager.getConnection("",
+          "", "");
       // conn = getConn();
       stmt = conn.createStatement();
 //      stmt.execute("reset hive.exec.post.hooks");

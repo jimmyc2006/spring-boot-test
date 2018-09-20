@@ -22,8 +22,8 @@ public class ImpalaJdbcCli {
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     String driver = "org.apache.hive.jdbc.HiveDriver";
-    String url = "jdbc:hive2://test-005.qianjin.com:21050/crm;auth=noSasl";
-    String user = "hive";
+    String url = "";
+    String user = "";
     Class.forName(driver);
     Connection conn = null;
     Statement s = null;
